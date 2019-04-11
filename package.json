@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.7.1"
+  },
+  "dependencies": {
+    "prompt": "^1.0.0"
   }
 }

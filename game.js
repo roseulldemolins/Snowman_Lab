@@ -11,11 +11,25 @@ class Game{
   };
 
   updateLives(letter) {
-    this.hiddenWord.checkLetter(letter);
-    if (this.hiddenWord.checkLetter(letter) === false) { // how can we avoid calling this twice?
+    if (this.hiddenWord.checkLetter(letter) === false) { // Nb this calls the actual method!
       this.player.numLives -= 1;
     }
   };
+
+  isLost() {
+    if (this.player.numLives === 0) {
+      console.log('You lose!');
+      return true
+    }
+  }
+
+  isWon(game) {
+    if (this.hiddenWord.display(game) === this.hiddenWord.word) {
+      console.log('You win!');
+      return true
+    }
+  }
+
 
 }
 
