@@ -32,4 +32,9 @@ describe('Game', () => {
     expect(game.guessedLetters).toEqual(['a'])
   });
 
+  test('Can reduce player\'s lives', function() {
+    player1.guessLetter('x', game);
+    expect(player1.numLives).toBe(5);    
+  })
+
 });
