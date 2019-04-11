@@ -15,19 +15,45 @@ const readline = require('readline').createInterface({
 });
 
 readline.question(`Enter a word: `, (enteredWord) => {
+  hiddenWord.word = enteredWord;
+  game.hiddenWord = hiddenWord;
   console.clear();
-  readline.question(`Please choose a letter: `, (enteredLetter) => {
-    hiddenWord.word = enteredWord;
-    game.hiddenWord = hiddenWord; 
-    player1.guessLetter(enteredLetter, game);
-    console.log(game.guessedLetters);
-  readline.close();
-});
-});
-// rl.question('Please enter the first number : ', (answer1) => {
-//     rl.question('Please enter the second number : ', (answer2) => {
-//         var result = (+answer1) + (+answer2);
-//         console.log(`The sum of above two numbers is ${result}`);
-//         rl.close();
+  promptLetter();
+  promptLetter();
+  promptLetter();
+  promptLetter();
+  promptLetter();
+  promptLetter();
+//   readline.question(`Please choose a letter: `, (enteredLetter) => {
+//   player1.guessLetter(enteredLetter, game);
+//   console.log(game.guessedLetters);
+//   readline.question(`Please choose a letter: `, (enteredLetter) => {
+//     player1.guessLetter(enteredLetter, game);
+//     console.log(game.guessedLetters);
+//     readline.question(`Please choose a letter: `, (enteredLetter) => {
+//     player1.guessLetter(enteredLetter, game);
+//     console.log(game.guessedLetters);
+//     readline.question(`Please choose a letter: `, (enteredLetter) => {
+//       player1.guessLetter(enteredLetter, game);
+//       console.log(game.guessedLetters);
+//       readline.question(`Please choose a letter: `, (enteredLetter) => {
+//       player1.guessLetter(enteredLetter, game);
+//       console.log(game.guessedLetters);
+//       readline.question(`Please choose a letter: `, (enteredLetter) => {
+//         player1.guessLetter(enteredLetter, game);
+//         console.log(game.guessedLetters);
+//     readline.close();
 //     });
+//   });
 // });
+// });
+// });
+// });
+});
+
+function promptLetter() {
+  readline.question(`Please choose a letter: `, (enteredLetter) => {
+  player1.guessLetter(enteredLetter, game);
+  console.log(game.guessedLetters);
+  });
+};

@@ -14,6 +14,8 @@ class Game{
     if (this.hiddenWord.checkLetter(letter) === false) { // Nb this calls the actual method!
       this.player.numLives -= 1;
     }
+    this.isLost();
+    this.isWon(this) // can we pass the game object as an arg to its own method?
   };
 
   isLost() {
