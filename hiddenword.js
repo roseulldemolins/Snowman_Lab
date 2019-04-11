@@ -16,9 +16,13 @@ class HiddenWord{
     return checkGuess;
   };
 
-  display() {
+  display(game) {
     return this.word.split('').map(character => {
-      return character = '*';
+      if (game.guessedLetters.includes(character)) {
+        return character;
+      } else {
+        return character = '*';
+      };
     }).toString().replace(/,/g,'');
   };
 

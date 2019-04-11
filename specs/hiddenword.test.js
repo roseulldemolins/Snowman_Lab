@@ -27,7 +27,7 @@ describe('Hiddenword', () => {
     player1.guessLetter('a', game);
     player1.guessLetter('g', game);
     player1.guessLetter('x', game);
-    expect(hiddenWord.display()).toBe('**g**a*')
+    expect(hiddenWord.display(game)).toBe('**g**a*')
   });
 
 });
